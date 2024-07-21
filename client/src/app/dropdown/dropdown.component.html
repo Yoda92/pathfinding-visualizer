@@ -1,0 +1,40 @@
+<div class="h-full relative">
+  <button
+    [disabled]="disabled"
+    (click)="onOpenCloseClick()"
+    class="base-text base-button"
+  >
+    <span class="button-inner-wrapper"
+      >{{ selectedItem?.label
+      }}<span class="flex items-center justify-center"
+        ><fa-icon
+          class="absolute"
+          [@fadeAnimation]
+          *ngIf="isActive"
+          [icon]="faChevronUp"
+          size="sm"
+        ></fa-icon
+        ><fa-icon
+          class="absolute"
+          [@fadeAnimation]
+          *ngIf="!isActive"
+          [icon]="faChevronDown"
+          size="sm"
+        ></fa-icon></span
+    ></span>
+  </button>
+  <div
+    class="absolute z-10 transition-opacity origin-top-right right-0 mt-2 w-full rounded-md shadow-lg bg-zinc-300"
+    *ngIf="isActive"
+    [@fadeAnimation]
+  >
+    <div class="py-1">
+      <label
+        (click)="onItemClick(item)"
+        *ngFor="let item of items"
+        class="hover:text-zinc-700 cursor-pointer transition-color block px-4 py-2 base-text-dark"
+        >{{ item.label }}</label
+      >
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="navbar-wrapper">
+  <div class="navbar">
+    <div #hamburger class="hamburger" (click)="onHamburgerClick()">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+    </div>
+    <div #navmenu class="navmenu">
+      <app-dropdown [disabled]="isPlaying || isDisabled" [items]="pathfindingAlgorithmChoices" [selectedItem]="selectedPathfindingAlgorithm"
+        (selectedItemChange)="onPathfindingAlgorithmChoiceChange($event)"></app-dropdown>
+      <app-dropdown [disabled]="isPlaying || isDisabled" [items]="terrainGeneratorChoices" [selectedItem]="selectedTerrainGenerator"
+        (selectedItemChange)="onTerrainGeneratorChoiceChange($event)"></app-dropdown>
+      <button [disabled]="isPlaying" class="base-text base-button" (click)="onShuffleClick()">
+        <span class="button-inner-wrapper">
+          <fa-icon [icon]="faRefresh" size="lg"></fa-icon>Reset
+        </span>
+      </button>
+      <div class="flex flex-col items-center justify-center gap-1">
+        <label class="base-text">Speed</label>
+        <input [(ngModel)]="speed" (ngModelChange)="onSpeedChange()" min="25" max="1000" step="25" type="range"
+          class="base-text base-slider slider-reverse" />
+      </div>
+      <button [disabled]="isDisabled" class="base-text base-button" (click)="onStartStopClick()">
+        <span class="button-inner-wrapper" *ngIf="!isPlaying">
+          <fa-icon [icon]="faCirclePlay" size="lg"></fa-icon>Start
+        </span>
+        <span class="button-inner-wrapper" *ngIf="isPlaying">
+          <fa-icon [icon]="faCircleStop" size="lg"></fa-icon>Stop
+        </span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div #gridWrapper class="grid-wrapper">
+  <div class="grid-inner-wrapper">
+    <div class="grid-row" *ngFor="let row of grid | gridNodes">
+      <div *ngFor="let node of row" [ngClass]="['node', node.type | nodeColorClass]">
+      </div>
+    </div>
+  </div>
+</div>

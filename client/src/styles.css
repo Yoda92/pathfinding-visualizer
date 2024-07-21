@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply bg-zinc-900;
+  height: 100%;
+  width: 100%;
+}
+
+.base-text {
+  @apply font-sans font-normal text-zinc-300;
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+}
+
+.base-text-dark {
+  @apply font-sans font-normal text-zinc-900;
+  font-size: 0.9rem;
+  line-height: 1.25rem;
+}
+
+.base-slider {
+  @apply h-full h-2 transition-colors disabled:hover:bg-zinc-900 bg-zinc-900 hover:bg-zinc-300 hover:text-zinc-900 rounded outline-none appearance-none cursor-pointer;
+}
+
+.base-slider::-moz-range-thumb {
+  @apply bg-zinc-400 h-3 w-3 cursor-pointer appearance-none shadow;
+  border-radius: 50%;
+}
+
+.base-slider::-webkit-slider-thumb {
+  @apply bg-zinc-400 h-3 w-3 cursor-pointer appearance-none shadow;
+  border-radius: 50%;
+}
+
+.base-slider:disabled::-webkit-slider-thumb {
+  @apply bg-zinc-500 cursor-default;
+}
+
+.base-slider:disabled::-moz-range-thumb {
+  @apply bg-zinc-500 cursor-default;
+}
+
+.base-slider:disabled::-webkit-slider-runnable-track {
+  @apply cursor-default;
+}
+
+.base-slider:disabled::-moz-range-track {
+  @apply cursor-default;
+}
+
+.base-button {
+  @apply h-12 w-40 disabled:text-zinc-500 disabled:hover:bg-zinc-900 flex flex-row gap-3 justify-center items-center transition-colors bg-zinc-900 hover:bg-zinc-300 hover:text-zinc-900 pl-4 pr-4 rounded-md;
+}

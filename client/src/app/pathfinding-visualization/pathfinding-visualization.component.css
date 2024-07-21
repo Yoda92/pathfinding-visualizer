@@ -1,0 +1,15 @@
+.grid-wrapper {
+  @apply w-full h-full p-4 flex flex-col;
+}
+
+.grid-inner-wrapper {
+  @apply w-full h-full bg-zinc-800 rounded-sm p-0.5 flex flex-col gap-0.5;
+}
+
+.grid-row {
+  @apply flex flex-grow w-full gap-0.5;
+}
+
+.node {
+  @apply flex flex-grow h-full rounded-sm transition-colors;
+}

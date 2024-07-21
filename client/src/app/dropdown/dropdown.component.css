@@ -1,0 +1,3 @@
+.button-inner-wrapper {
+    @apply h-full flex flex-row items-center justify-center gap-3;
+}

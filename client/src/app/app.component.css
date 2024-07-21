@@ -1,0 +1,11 @@
+.app-wrapper {
+    @apply w-full h-full flex flex-col gap-4;
+}
+
+.navbar-wrapper {
+    @apply absolute w-full h-full;
+}
+
+.pathfinding-visualization-wrapper {
+    @apply absolute pt-16 w-full h-full;
+}
